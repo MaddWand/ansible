@@ -4,14 +4,6 @@
   vars:
     yum_name: "*"
     yum_state:  latest
-    yum_enablerepo: "rhel-?-server-rpms,rhel-?-server-satellite-tools-6.?-rpms"
-    yum_disablerepo: "*"
-    yum_exclude: ""
-    dnf_name: "*"
-    dnf_state: latest
-    dnf_enablerepo: "rhel-8-for-x86_64-appstream-rpms,rhel-8-for-x86_64-baseos-rpms,satellite-tools-6.?-for-rhel-8-x86_64-rpms"
-    dnf_disablerepo: "*"
-    dnf_exclude: ""
   tasks:
 
     - name: upgrade packages via yum
@@ -31,23 +23,6 @@
       debug:
         msg: "yum command produced errors"
       when: yumcommandout is not defined
-
-    - name: upgrade packages via dnf
-      dnf:
-        name={{ dnf_name }}
-        state={{ dnf_state }}
-        disablerepo={{ dnf_disablerepo }}
-        enablerepo={{ dnf_enablerepo }}
-        exclude={{ dnf_exclude }}
-      become: "yes"
-      register: dnfcommandout
-      when:
-        - ansible_facts['distribution_major_version'] == '8'
-
-    - name: Print errors if dnf failed
-      debug:
-        msg: "dnf command produced errors"
-      when: dnfcommandout is not defined
 
     - name: check to see if we need a reboot
       command: needs-restarting -r
