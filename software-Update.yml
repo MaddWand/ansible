@@ -8,7 +8,7 @@
 
     - name: upgrade packages via yum
       yum:
-        name: *
+        name: '*'
         state: latest
         # disablerepo={{ yum_disablerepo }}
         # enablerepo={{ yum_enablerepo }}
