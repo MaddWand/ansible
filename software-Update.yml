@@ -1,9 +1,10 @@
 - hosts: all
+  become: yes
 
   tasks:
   - name: install the latest version of Apache
     yum:
       name: '*'
       state: latest
-      username: '{{ rhsm_username }}'
-      password: '{{ rhsm_password }}'
+      become_user: '{{ rhsm_username }}'
+      become_pass: '{{ rhsm_password }}'
