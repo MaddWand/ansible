@@ -8,11 +8,11 @@
 
     - name: upgrade packages via yum
       yum:
-        name={{ yum_name }}
-        state={{ yum_state }}
-        disablerepo={{ yum_disablerepo }}
-        enablerepo={{ yum_enablerepo }}
-        exclude={{ yum_exclude }}
+        name: {{ yum_name }}
+        state: {{ yum_state }}
+        # disablerepo={{ yum_disablerepo }}
+        # enablerepo={{ yum_enablerepo }}
+        # exclude={{ yum_exclude }}
       become: "yes"
       register: yumcommandout
       when:
