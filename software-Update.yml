@@ -1,6 +1,6 @@
-
-- name: Patch and reboot servers
-  yum:
-    name: '*'
-    state: latest
+----
+  - name: Patch and reboot servers
+    yum:
+      name: '*'
+      state: latest
 
