@@ -7,5 +7,6 @@
     yum:
       name: '*'
       state: latest
+      become_user: '{{ rhsm_username }}'
       become_pass: '{{ rhsm_password }}'
 
