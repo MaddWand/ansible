@@ -1,12 +1,11 @@
 - hosts: all
   become: yes
-  become_method: sudo
+  become_method: su
 
   tasks:
   - name: install the latest version of Apache
     yum:
       name: '*'
       state: latest
-      become_user: '{{ rhsm_username }}'
       become_pass: '{{ rhsm_password }}'
 
