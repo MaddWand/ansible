@@ -1,4 +1,6 @@
-- name: install the latest version of Apache
-  yum:
-    name: "*"
-    state: latest
+- hosts: all
+  tasks:
+  - name: install the latest version of Apache
+    yum:
+      name: '*'
+      state: latest
