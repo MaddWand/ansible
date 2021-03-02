@@ -2,6 +2,7 @@
   become: yes
   become_user: root
   become_method: su
+  become_pass: redhat
   tasks:
   - name: install the latest version of Apache
     yum:
