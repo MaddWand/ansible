@@ -15,7 +15,7 @@
 # Play 1 - Do updates for host
 ###########################################################################
 - name: Play 1 - install updates on the Ansible controller
-- hosts: *
+- hosts: '*'
   ansible_connection: local
   become: yes
   become_method: sudo
