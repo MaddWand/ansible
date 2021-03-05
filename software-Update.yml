@@ -15,7 +15,7 @@
 # Play 1 - Do updates for host
 ###########################################################################
 - name: Play 1 - install updates on the Ansible controller
-- hosts: all
+  hosts: all
   become: yes
   become_method: sudo
   become_user: '{{ rhsm_username }}'
