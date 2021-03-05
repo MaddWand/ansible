@@ -16,7 +16,9 @@
 ###########################################################################
 - name: Play 1 - install updates on the Ansible controller
 - hosts: localhost
-  remote_user: admin
+#  remote_user: admin
+  become: yes
+  become_method: su
   vars:
     run: false
     reboot:false
@@ -28,6 +30,8 @@
       yum:
         name: "*"
         state: latest
+        become_user: '{{ rhsm_username }}'
+        become_pass: '{{ rhsm_password }}'
         update_cache: true
       become: true
 
