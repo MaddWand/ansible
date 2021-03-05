@@ -16,9 +16,6 @@
 ###########################################################################
 - name: Play 1 - install updates on the Ansible controller
   hosts: all
-  become: yes
-  become_method: sudo
-  become_user: '{{ rhsm_username }}'
 
 #  vars:
 #    run: false
@@ -29,6 +26,9 @@
   # Perform the updates
   #########################################################################
     - name: Install all available updates
+      become: yes
+      become_method: sudo
+      become_user: '{{ rhsm_username }}'
       yum:
         name: "*"
         state: latest
