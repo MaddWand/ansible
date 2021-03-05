@@ -16,7 +16,7 @@
 ###########################################################################
 - name: Play 1 - install updates on the Ansible controller
 - hosts: localhost
-  remote_user: root
+  remote_user: admin
   vars:
     run: false
     reboot:false
