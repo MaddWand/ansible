@@ -27,8 +27,9 @@
   #########################################################################
     - name: Install all available updates
       become: yes
-      become_method: sudo
-      become_user: '{{ rhsm_username }}'
+      become_usser: root
+#      become_method: sudo
+#      become_user: '{{ rhsm_username }}'
       yum:
         name: "*"
         state: latest
