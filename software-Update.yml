@@ -19,7 +19,6 @@
   become: yes
   become_method: sudo
   become_user: '{{ rhsm_username }}'
-  become_pass: '{{ rhsm_password }}'
 
 #  vars:
 #    run: false
