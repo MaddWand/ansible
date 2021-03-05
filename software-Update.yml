@@ -16,7 +16,6 @@
 ###########################################################################
 - name: Play 1 - install updates on the Ansible controller
 - hosts: '*'
-  ansible_connection: local
   become: yes
   become_method: sudo
   become_user: '{{ rhsm_username }}'
